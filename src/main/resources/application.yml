@@ -1,0 +1,9 @@
+leco:
+  mq:
+    queue: test
+    exchange: test-exchange
+    route: strawberry
+
+spring:
+  banner:
+    location: banner.txt
