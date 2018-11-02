@@ -1,8 +1,12 @@
-leco:
-  mq:
-    queue: test
-    exchange: test-exchange
-    route: strawberry
+order:
+  queue: order
+  exchange: orders-exchange
+  route: /
+
+item:
+  queue: item
+  exchange: item-exchange
+  route: /
 
 spring:
   banner:

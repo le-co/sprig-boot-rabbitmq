@@ -1,16 +1,15 @@
 package lsc.springframework.rabbit.pocrabbit.services.amq;
 
+import lsc.springframework.rabbit.pocrabbit.services.contracts.ListenerService;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.stereotype.Component;
 
 @Component
-public class Receiver {
+public class OrderListenerService implements ListenerService {
 
-    @RabbitListener(queues = "${leco.mq.queue}")
-    public void receive(@Payload String fileBody) throws InterruptedException {
-        Thread.sleep(2000);
+    @RabbitListener(queues = "${order.queue}")
+    public void receive(@Payload String fileBody) {
         System.out.println("Received < " + fileBody + ">");
     }
-
 }
